@@ -10,7 +10,7 @@ class Server(Base):
 
     id = Column(BigInteger, primary_key=True)
     discord_server_id = Column(String(45), nullable=False)
-    boj_group_id = Column(String(45), nullable=False)
+    boj_group_id = Column(BigInteger, nullable=False)
     workbook_daily_enable = Column(Boolean, nullable=False)
     workbook_weekly_enable = Column(Boolean, nullable=False)
     problem_format_daily_id = Column(ForeignKey('problem_format_daily.id'), nullable=False, index=True)
