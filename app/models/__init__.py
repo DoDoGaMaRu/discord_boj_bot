@@ -1,7 +1,7 @@
 from .base import Base
 
 from .best_record import BestRecord
-from .server import Server
+from .guild import Guild
 from .language import Language
 from .member import Member
 from .problem import Problem
