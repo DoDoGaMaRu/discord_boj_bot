@@ -1,5 +1,4 @@
 import os
-import logging
 import discord
 
 from dotenv import load_dotenv
@@ -14,22 +13,20 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix='/', intents=intents)
-logger = logging.getLogger('discord')
-logger.setLevel(logging.DEBUG if DEBUG else logging.INFO)
+
+from logger import logger
 
 # ----------------------
-# COGS
-# ----------------------
-for filename in os.listdir('./cogs'):
-  if filename.endswith('.py'):
-    bot.load_extension(f'cogs.{filename[:-3]}')
-
-# ----------------------
-# bot.event
+# INITIALIZE
 # ----------------------
 @bot.event
 async def on_ready():
   logger.info(f'{bot.user} 로그인 성공')
+
+  for filename in os.listdir('./cogs'):
+    if filename.endswith('.py'):
+      await bot.load_extension(f'cogs.{filename[:-3]}')
+
   await bot.change_presence(status=discord.Status.online, activity=discord.Game('문제 고르는 중'))
   try:
     synced = await bot.tree.sync()
