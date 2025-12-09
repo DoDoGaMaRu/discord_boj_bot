@@ -5,8 +5,8 @@ from .base import Base
 metadata = Base.metadata
 
 
-class ProblemFormatWeekly(Base):
-    __tablename__ = 'problem_format_weekly'
+class ProblemTemplateWeekly(Base):
+    __tablename__ = 'problem_template_weekly'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     guild_id = Column(ForeignKey('guild.id'), nullable=False, index=True)
