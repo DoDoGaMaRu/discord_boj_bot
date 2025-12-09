@@ -7,4 +7,4 @@ metadata = Base.metadata
 class Language(Base):
     __tablename__ = 'language'
 
-    name = Column(String(45), primary_key=True)
+    name = Column(String, primary_key=True)

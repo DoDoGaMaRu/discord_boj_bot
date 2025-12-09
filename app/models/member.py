@@ -10,8 +10,8 @@ class Member(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     guild_id = Column(ForeignKey('guild.id'), nullable=False, index=True)
-    discord_id = Column(String(45), nullable=False)
-    boj_id = Column(String(45), nullable=True)
+    discord_id = Column(String, nullable=False)
+    boj_id = Column(String, nullable=True)
     is_activated = Column(Boolean, nullable=False, default=False)
 
     guild = relationship('Guild')

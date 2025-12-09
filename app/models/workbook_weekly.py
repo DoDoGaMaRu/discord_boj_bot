@@ -11,7 +11,7 @@ class WorkbookWeekly(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     guild_id = Column(ForeignKey('guild.id'), nullable=False, index=True)
     boj_workbook_id = Column(Integer, nullable=False)
-    name = Column(String(45), nullable=False)
+    name = Column(String, nullable=False)
     date = Column(Date, nullable=False)
     created = Column(Boolean, nullable=False)
 

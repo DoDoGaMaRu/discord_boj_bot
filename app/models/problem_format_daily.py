@@ -10,8 +10,8 @@ class ProblemFormatDaily(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     guild_id = Column(ForeignKey('guild.id'), nullable=False, index=True)
-    min_tier = Column(String(45), nullable=False)
-    max_tier = Column(String(45), nullable=False)
+    min_tier = Column(String, nullable=False)
+    max_tier = Column(String, nullable=False)
     no_dup = Column(Boolean, nullable=False)
     sequence = Column(Integer, nullable=False)
 
