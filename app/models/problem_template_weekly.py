@@ -14,6 +14,5 @@ class ProblemTemplateWeekly(Base):
     max_tier = Column(String, nullable=False)
     min_solver = Column(Integer, nullable=False)
     no_dup = Column(Boolean, nullable=False)
-    sequence = Column(Integer, nullable=False)
 
     guild = relationship('Guild')
