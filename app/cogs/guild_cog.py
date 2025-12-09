@@ -7,7 +7,7 @@ from discord.ext import commands
 from models import Guild, Member
 from logger import logger
 
-
+# TODO: name, description 조정
 class GuildCog(commands.Cog):
   def __init__(self, bot: commands.Bot):
     self.bot = bot
@@ -39,6 +39,7 @@ class GuildCog(commands.Cog):
       (Member.is_activated == True)
     ).all()
 
+    # TODO: 문제 받는 사람 목록 표시
     await interaction.response.send_message(len(members), ephemeral=True)
 
   async def find_guild(self, _guild: discord.Guild):
