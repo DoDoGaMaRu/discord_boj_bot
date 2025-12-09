@@ -12,6 +12,7 @@ class ProblemFormatWeekly(Base):
     guild_id = Column(ForeignKey('guild.id'), nullable=False, index=True)
     min_tier = Column(String, nullable=False)
     max_tier = Column(String, nullable=False)
+    min_solver = Column(Integer, nullable=False)
     no_dup = Column(Boolean, nullable=False)
     sequence = Column(Integer, nullable=False)
 
